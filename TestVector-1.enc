@@ -1,0 +1,103 @@
+class  Vector
+{
+	int i,j,k;
+	public Vector()
+	{
+		i=0;
+		j=0;
+		k=0;
+	}
+	public Vector(int x)		
+	{
+		i=x;
+		j=x;
+		k=x;
+	}
+	public Vector(int x, int y , int z)
+	{
+		i=x;
+		j=y;
+		k=z;
+	}
+	void display()
+	{
+		System.out.println("("+i+","+j+","+k+")");
+	}
+	Vector add(Vector p)
+	{
+		Vector temp=new Vector();
+		temp.i=this.i+p.i;
+		temp.j=this.j+p.j;
+		temp.k=this.k+p.k;
+                return temp;
+	}
+	Vector add(Vector p, Vector s)
+	{
+		Vector temp=new Vector();
+		temp.i=this.i+p.i+s.i;
+		temp.j=this.j+p.j+s.j;
+		temp.k=this.k+p.k+s.k;
+		return temp;
+	}
+	int product(Vector p)
+	{
+		int temp=0;
+		temp=this.i*p.i+this.j*p.j+this.k*p.k;
+		return temp;	
+	}
+	Vector product(int p)
+	{
+		Vector temp=new Vector();
+		temp.i=this.i*p;
+		temp.j=this.j*p;
+		temp.k=this.k*p;
+		return temp;
+	}
+	static Vector sum(Vector p,Vector s)
+	{
+		Vector temp=new Vector();
+		temp.i=p.i+s.i;
+		temp.j=p.j+s.j;
+		temp.k=p.j+s.k;
+		return temp;
+	}
+	static int mul(Vector p ,Vector s)
+	{
+		int temp=0;
+		temp=s.i*p.i+s.j*p.j+s.k*p.k;
+ 		return temp;
+	}
+}
+class TestVector
+{
+	public static void main(String args[])
+	{
+		Vector v0=new Vector(2);
+		Vector v1=new Vector(5);
+		Vector v2=new Vector(9);
+		Vector v3=new Vector(1);
+		Vector v4=new Vector(3);
+		Vector v5=v0.add(v1);
+		Vector v6=v0.add(v2,v3);
+		Vector v7=v1.product(5);
+		Vector v8=Vector.sum(v1,v3);
+		int prat=v0.product(v1);
+		int sadiq= Vector.mul(v0,v3);
+		v0.display();
+		v1.display();
+		v2.display();
+		v3.display();
+		v4.display();
+		v5.display();
+		v6.display();
+		v7.display();
+		v8.display();
+		System.out.println(prat);
+		System.out.println(sadiq);
+
+	}
+}		
+
+			
+	
+		
